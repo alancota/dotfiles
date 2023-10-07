@@ -1,0 +1,34 @@
+#!/bin/sh
+
+echo
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/mackup shellenv)"
+
+export DOTFILES="$HOME/.dotfiles"
+
+if [ -f "$HOME/.zshrc" ]; then
+    if [ ! -L "$HOME/.zshrc" ]; then
+        mv $HOME/.zshrc $HOME/.zshrc-backup-$(date +"%m%d%Y%H%M%S")
+        echo "$HOME/.zshrc physical file backed up to .zshrc-backup-$(date +"%m%d%Y%H%M%S")"
+    else
+        rm mv $HOME/.zshrc
+        echo "$HOME/.zshrc existing link deleted"
+    fi
+fi
+ln -s $DOTFILES/zshrc $HOME/.zshrc
+echo "$HOME/.zshrc linked to $DOTFILES/zshrc"
+
+if [ -f "$HOME/.mackup.cfg" ]; then
+    # mackup.cfg already exists
+    if [ ! -L "$HOME/.mackup.cfg" ]; then
+        # It's not a link
+        mv $HOME/.mackup.cfg $HOME/.mackup.cfg-backup-$(date +"%m%d%Y%H%M%S")
+        echo "$HOME/.mackup.cfg physical file backed up to .mackup.cfg-backup-$(date +"%m%d%Y%H%M%S")"
+    else
+        # It is a link
+        rm mv $HOME/.mackup.cfg
+        echo "$HOME/.mackup.cfg existing link deleted"
+    fi
+fi
+ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs/.config/mackup/.mackup.cfg" $HOME/.mackup.cfg
+echo "$HOME/.mackup.cfg linked to $HOME/Library/Mobile Documents/com~apple~CloudDocs/.config/mackup/.mackup.cfg"
