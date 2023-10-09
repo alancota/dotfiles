@@ -196,15 +196,6 @@ c_gitall() {
 
   gaa && gcmsg "${MESSAGE}" && gp
 
-  # echo "Performing: git add ."
-  # git add .
-
-  # echo "Performing: git commig -m \"${MESSAGE}\""
-  # git commit -m "${MESSAGE}"
-
-  # echo "Performing: git push"
-  # git push
-
   echo
   echo "Done: git add . + git commig <msg> + git push"
 
