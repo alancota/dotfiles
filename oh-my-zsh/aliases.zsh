@@ -18,6 +18,9 @@ alias genpwd='gen_random_password'
 # Backup Home Brew and my custom Aliases to iCloud drive
 alias bkp='${HOMEBREW_BACKUP}/homebrew_backup.sh'
 
+# Git add all + commit + push
+alias gall='c_gitall'
+
 # --------------------------------------------------------------------#
 #                        Zsh specific aliases                         #
 # --------------------------------------------------------------------#

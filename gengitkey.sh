@@ -67,7 +67,6 @@ Host github.com
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ${HOME}/.ssh/$filename
-
 EOL
 
 echo "Adding key to Apple Keychain"

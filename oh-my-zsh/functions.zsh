@@ -67,7 +67,13 @@ getc() {
   /bin/stty "${save_state}"
 }
 
+# #################################
+#   Custom Functions I created    #
+# #################################
+
+# ****************************************
 # Function to generate random passwords
+# ****************************************
 gen_random_password() {
 
   if [ $# -lt 1 ]; then
@@ -85,7 +91,9 @@ gen_random_password() {
 
 }
 
+# ****************************************
 # Function to generate Docker Secrets
+# ****************************************
 gen_docsec() {
 
   # Validating the arguments
@@ -120,12 +128,84 @@ gen_docsec() {
 
 }
 
-# This function will install a new Brew package and execute the Homebrew backup right away
+# **********************************************************
+# This function will install a new Brew package and execute
+# the Homebrew backup right away
+# **********************************************************
 c_brew() {
 
   brew "$@"
   p_msg "Creating an updated Brewfile backup"
   ${HOMEBREW_BACKUP}/homebrew_backup.sh
   echo "New Brewfile backup successfully created"
+
+}
+
+# **********************************************************
+# This custom function automates pushing code to git hub
+# by executing git status + commit + push
+# **********************************************************
+process_arguments() {
+  while [ -n "$1" ]; do
+    case $1 in
+    -h | --help)
+      echo "some usage details"
+      exit 1
+      ;;
+    -x)
+      do_something
+      shift
+      break
+      ;;
+    -y)
+      do_something_else
+      shift
+      break
+      ;;
+    *)
+      echo "some usage details"
+      exit 1
+      ;;
+    esac
+    echo $1
+    shift
+  done
+}
+
+c_gitall() {
+
+  show_usage() {
+    echo -e "Usage: ./$0 -m <github commit message> [-f]
+      Perform a Github automation by executing: 'git add .', 'git commit -m <github commit message>' and a 'git push'
+
+      -m, --message,    --message     Github commit message
+      -f, -force,       --force       Don't ask for confirmation before pushing code to github"
+    return
+  }
+
+  # Validating the arguments
+  if [ $# -lt 1 ]; then
+    show_usage
+    return
+  fi
+
+  MESSAGE=$1
+  FORCE=false
+
+  p_msg="Doing the git stuff..."
+
+  gaa && gcmsg "${MESSAGE}" && gp
+
+  # echo "Performing: git add ."
+  # git add .
+
+  # echo "Performing: git commig -m \"${MESSAGE}\""
+  # git commit -m "${MESSAGE}"
+
+  # echo "Performing: git push"
+  # git push
+
+  echo
+  echo "Done: git add . + git commig <msg> + git push"
 
 }
