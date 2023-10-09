@@ -1,11 +1,15 @@
 #!/bin/sh
 
+set -ue
+
 echo "Here we go..."
 
 echo
 
 echo "Creating symbolic links..."
-source symlinks
+source symlinks.sh
+
+echo "Reloading oh-my-zsh"
 
 echo
 echo "Homebrew bundle starting now. Grab a coffee... "
