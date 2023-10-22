@@ -7,7 +7,6 @@ echo
 
 DOTFILES=$HOME/.dotfiles
 
-
 backup_file() {
     local file=$1
     local new_file_name="$1-backup-$(date +"%m%d%Y%H%M%S")"
@@ -16,11 +15,11 @@ backup_file() {
         # check if it's not a link
         if [ ! -L "$file" ]; then
             mv "$file" "$new_file_name"
-            echo "File $file backed up to $new_file_name"   
+            echo "File $file backed up to $new_file_name"
         fi
     else
         echo "Removing the link $file"
-        rm "$file"      
+        rm "$file"
     fi
 }
 

@@ -7,9 +7,7 @@ echo "Here we go..."
 echo
 
 echo "Creating symbolic links..."
-source symlinks.sh
-
-echo "Reloading oh-my-zsh"
+source symlinks
 
 echo
 echo "Homebrew bundle starting now. Grab a coffee... "

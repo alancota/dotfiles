@@ -18,6 +18,9 @@ alias genpwd='gen_random_password'
 # Backup Home Brew and my custom Aliases to iCloud drive
 alias bkp='${HOMEBREW_BACKUP}/homebrew_backup.sh'
 
+# Git add all + commit + push
+alias gall='c_gitall'
+
 # --------------------------------------------------------------------#
 #                        Zsh specific aliases                         #
 # --------------------------------------------------------------------#
@@ -79,6 +82,9 @@ alias la='ls -ltra'
 
 # Go to iCloud
 alias ic='cd ${HOME}/iCloud'
+
+# Check which Mac network interface is being used
+alias whichif='networksetup -listnetworkserviceorder  |grep -B1 "$(route get google.com | awk "/interface/ {print \$2}")"'
 
 # --------------------------------------------------------------------#
 #                    Docker and Docker Compose                        #

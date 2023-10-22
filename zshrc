@@ -27,7 +27,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Homebrew bin
 export PATH=$PATH:/opt/homebrew/bin
-
+export PATH=/Users/acota/.local/bin:$PATH
 # Enabled on 6/26 - Brew for x86_64 packages
 # https://medium.com/mkdir-awesome/how-to-install-x86-64-homebrew-packages-on-apple-m1-macbook-54ba295230f
 # Disabled on 10/07/2023

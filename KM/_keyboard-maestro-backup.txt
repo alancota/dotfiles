@@ -1,0 +1,4 @@
+Keyboard Maestro Backup Stuff - https://forum.keyboardmaestro.com/t/macro-repository-suite-backup-and-version-control-for-keyboard-maestro/15311
+Git Repo: https://github.com/dagware/DanThomas/blob/master/MacroRepository/MacroRepository.md
+
+The Backup is being saved to iCloud/.config/KM/Data

@@ -68,6 +68,8 @@ brew "dldash/core/docker-color-output"
 brew "heroku/brew/heroku"
 cask "1password"
 cask "1password-cli"
+cask "adobe-acrobat-reader"
+cask "adobe-creative-cloud"
 cask "anypointstudio"
 cask "bartender"
 cask "burp-suite"
@@ -75,6 +77,7 @@ cask "caffeine"
 cask "chromium"
 cask "cleanmymac"
 cask "coteditor"
+cask "cyberghost-vpn"
 cask "dbeaver-community"
 cask "elgato-stream-deck"
 cask "firefox"
@@ -150,11 +153,13 @@ cask "keyboard-maestro"
 cask "kindle"
 cask "latest"
 cask "macupdater"
-cask "mutedeck"
+cask "nudge"
 cask "numi"
 cask "obsidian"
 cask "okta"
 cask "onyx"
+cask "raycast"
+cask "slack"
 cask "snagit"
 cask "spotify"
 cask "sqlitestudio"
@@ -167,18 +172,24 @@ cask "warp"
 cask "webstorm"
 cask "whatsapp"
 cask "workspaces"
+cask "zoom"
+mas "1Password for Safari", id: 1569813296
 mas "Advanced Screen Share", id: 1597458111
 mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
-mas "DaVinci Resolve", id: 571213070
+mas "Goodnotes", id: 1444383602
+mas "Grammarly for Safari", id: 1462114288
 mas "iMovie", id: 408981434
+mas "iStatistica Pro", id: 1447778660
 mas "Keynote", id: 409183694
 mas "Menu World Time", id: 1446377255
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Minimal", id: 1442727443
 mas "Moom", id: 419330170
 mas "Motion", id: 434290957
+mas "New File Menu", id: 1064959555
 mas "Numbers", id: 409203825
+mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
 mas "OpenIn", id: 1643649331
 mas "Pages", id: 409201541
@@ -189,4 +200,5 @@ mas "SlideDraw", id: 1476928012
 mas "Teleprompter", id: 417605357
 mas "Tot", id: 1491071483
 mas "Virtual Machines Hub", id: 1628310256
+mas "WhatsApp", id: 1147396723
 mas "Xcode", id: 497799835
