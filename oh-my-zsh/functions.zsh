@@ -194,7 +194,8 @@ c_gitall() {
 
   p_msg="Doing the git stuff..."
 
-  gaa && gcmsg "${MESSAGE}" && gp
+  #gaa && gcmsg "${MESSAGE}" && gp
+  git add --all && git commit -m "${MESSAGE}" && git push
 
   echo
   echo "Done: git add . + git commig <msg> + git push"
