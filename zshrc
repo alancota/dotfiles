@@ -27,7 +27,7 @@ export DOTFILES_LOCATION=$HOME/.dotfiles
 export ICLOUD=$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs
 
 # Homebrew backup scripts
-export HOMEBREW_BACKUP=$ICLOUD/.config/homebrew
+export HOMEBREW_BACKUP=${HOME}/Dropbox/config/backups/homebrew
 
 # mackup location
 export MACKUP_LOCATION=$ICLOUD/.config/mackup

@@ -37,6 +37,12 @@ alias ea='code ${ZSH_CUSTOM}/aliases.zsh'
 # Edit p10k.zsh
 alias p10='code ~/.p10k.zsh'
 
+# Edit functions.zsh
+alias ef='code ${ZSH_CUSTOM}/functions.zsh'
+
+# Copypath plugin alias (will copy PWD to clipboard)
+alias co='copypath'
+
 # --------------------------------------------------------------------#
 #                              Homebrew                               #
 # --------------------------------------------------------------------#

@@ -128,10 +128,10 @@ gen_docsec() {
 
 }
 
-# **********************************************************
-# This function will install a new Brew package and execute
-# the Homebrew backup right away
-# **********************************************************
+# **************************************************************************************************************
+# This function will install a new Brew package and execute the Homebrew backup right away.
+# It's used by the aliases 'bib' (install) and 'bub' (uninstall).
+# **************************************************************************************************************
 c_brew() {
 
   brew "$@"
@@ -172,8 +172,13 @@ process_arguments() {
   done
 }
 
+# ****************************************************
+# Function to push to git repos in one single command
+# ****************************************************
+
 c_gitall() {
 
+  # TO-DO: argument parsing
   show_usage() {
     echo -e "Usage: ./$0 -m <github commit message> [-f]
       Perform a Github automation by executing: 'git add .', 'git commit -m <github commit message>' and a 'git push'
