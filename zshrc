@@ -1,5 +1,16 @@
 # Changed on 10/06/2023
 
+# Set the Noname SA AWS profile as default when using aws cli
+export AWS_PROFILE=491489166083_SA_Standard_Access
+export AWS_REGION=us-east-2
+# disable the aws cli output to be sent to vi 
+export AWS_PAGER=""
+
+# Adds the ssh keys to the keystore
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/acota-awsnn.pem
+ssh-add --apple-use-keychain ~/.ssh/alanc-nn.pem
+
 # TO-DO: Reorganize the PATH exports
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -53,6 +64,10 @@ eval "$(jenv init -)"
 # Kind (Kubernetes multinote cluster)
 export KIND_PATH=/usr/local/Cellar/kind/0.9.0/bin
 export PATH=$PATH:$KIND_PATH
+
+# Python 3.9
+export PYTHON_PATH=/Users/acota/Library/Python/3.9/bin
+export PATH=$PATH:$PYTHON_PATH
 
 #jenv enable-plugin export
 #jenv enable-plugin maven

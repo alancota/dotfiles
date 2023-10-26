@@ -201,3 +201,99 @@ c_gitall() {
   echo "Done: git add . + git commig <msg> + git push"
 
 }
+
+# ****************************************
+# Function to start all my stopped ec2s
+# ****************************************
+
+start_ec2s() {
+
+  local instances=$(aws ec2 describe-instances --filter Name=instance-state-name,Values=stopped Name=key-name,Values=acota | grep InstanceId | awk '{ print $2 }' | tr -d '",')
+  p_msg "This script will start the following EC2 istances:"
+  echo "${instances}"
+  echo
+  read "response?Do you want to continue? [Y/n] "
+  response=${response:l}
+  if [[ $response =~ ^(y| ) ]] || [[ -z $response ]]; then
+    instance_list=""
+    for id in $(echo $instances); do
+      instance_list+="${id} "
+    done
+    echo
+    p_msg "Starting instances ${instance_list}..."
+    echo
+    aws ec2 start-instances --instance-ids $(echo $instance_list | xargs)
+    echo
+    p_msg "Instances successfully started"
+  fi
+
+}
+
+# ***********************************************
+# Function to create the noname.jks using Java 8
+# ***********************************************
+
+create_nnjks() {
+
+  # # Validating the arguments
+  # if [ $# -lt 1 ]; then
+  #   echo -e "Usage: $0 -h <noname onprem hostname> -p <port> -m <noname mulesoft plugin path>
+  #     Automatically creates the noname.jks file with the onprem self signed SSL certificate.
+
+  #     -h, --host,       --host        Noname hostname. Example: nnserver.nonamesec.com
+  #     -p, --port,       --port        The HTTPS port. Default: 443
+  #     -m, --muleapp,    --muleapp     The absolute path to the unziped Noname MuleSoft Plugin. Example: /Users/acota/Noname/plugins/mulesoft/noname-security-mulesoft-policy"
+  #   return
+  # fi
+
+  p_msg "Verifying your Java Version"
+  java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}' | awk -F '.' '{print $1$2}')
+
+  # if ["$java_version" -ge 18 ]; then
+  #   echo -e "You need to use Java 8 to create the noname.jks. Right now you are running: ${java_version}"
+  #   return
+  # else
+  #   p_msg "Java version is correct: ${java_version}"
+  # fi
+
+  [ "$java_version" != 18 ] && echo "You need Java 8" && return || echo "Java version is ok: $JAVA_VER"
+
+  nn_hostname=$1
+  mule_path=$2
+
+  p_msg "Downloading the certificate from the server $1 ..."
+  echo -n | openssl s_client -connect ${nn_hostname} >$2/host.crt
+  echo
+
+  p_msg "Certificate saved at $2/host.crt"
+  echo
+
+  p_msg "Creating JSE keystore at $2/noname.jks ..."
+  keytool -genkeypair -alias nn-temp -storepass noname -keypass noname -keystore $2/noname.jks -dname "CN=Developer, OU=Department, O=Company, L=City, ST=State, C=CA"
+
+  p_msg "Removing nn-temp alias from $2/noname.jks"
+  keytool -delete -alias nn-temp -storepass noname -keystore $2/noname.jks
+
+  p_msg "Importing the certificate $2/host.crt into the keystore $2/noname.jks"
+  printf "noname\nyes" | keytool -import -keystore $2/noname.jks -file "$2/host.crt" -alias nn-self-signed-cert
+
+  echo
+  p_msg "Deleting the $2/host.crt file"
+  rm -fv $2/host.crt
+
+  echo
+  p_msg "The keystore noname.jks was successfuly created at: $2/noname.jks"
+  echo
+
+  read "response?Do you want to push it to Exchange? [Y/n] "
+  response=${response:l}
+  if [[ $response =~ ^(y| ) ]] || [[ -z $response ]]; then
+    p_msg "Running the mvn command via docker"
+    echo
+    docker run -it --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.8.1-adoptopenjdk-15 /bin/bash -c "mvn clean deploy -B -s settings.xml"
+  fi
+
+  echo
+  p_msg "Noname Anypoint custom policy successfully deployed to Exchange"
+
+}

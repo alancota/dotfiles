@@ -122,7 +122,7 @@ alias grm='go run main.go'
 alias gbm='go build main.go'
 
 # Python 3 aliases
-alias p='python3'
+alias p3='python3'
 
 # PlantUML alias
 alias plantuml='java -jar /usr/local/bin/plantuml-1.2023.10.jar'
@@ -140,3 +140,11 @@ alias java_home="/usr/libexec/java_home"
 
 # NVM Node Manager Aliases
 alias nu="nvm use"
+
+# --------------------------------------------------------------------#
+#                     AWS cli and Programming                         #
+# --------------------------------------------------------------------#
+
+# whoami get authenticated identity
+alias ami='aws my-instances'
+alias adi='aws desc-inst'
