@@ -7,7 +7,8 @@
 
 # Connect to the bastion host with access to the private subnets
 # where my test apis are running
-alias sb='ssh -i .ssh/acota-nn.pem $NN_LAB_BASTION'
+alias sb='ssh $NN_LAB_BASTION'
+alias sn='ssh $NN_LAB_NONAME'
 
 # --------------------------------------------------------------------#
 #                    Custom functions and tools                       #
