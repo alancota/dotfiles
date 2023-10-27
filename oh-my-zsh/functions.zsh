@@ -302,3 +302,27 @@ create_nnjks() {
   p_msg "Noname Anypoint custom policy successfully deployed to Exchange"
 
 }
+
+# *******************************************************
+# Function to add all the AWS keypairs to the keychain
+# *******************************************************
+
+add_keypairs() {
+
+  if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+    echo "'ssh-agent' has not been started since the last reboot. Starting 'ssh-agent' now."
+    eval "$(ssh-agent -s)" /dev/null 2>&1
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+  fi
+  export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+  ssh-add -l >/dev/null
+  if [ "$?" -ne "0" ]; then
+    echo "No ssh keys have been added to your 'ssh-agent' since the last reboot. Adding default keys now."
+    for keypair in "$AWS_KEYPAIR_LOCATION"/*.pem; do
+      if [ -f "$keypair" ]; then
+        ssh-add --apple-use-keychain "$keypair" >/dev/null 2>&1
+      fi
+    done
+  fi
+}

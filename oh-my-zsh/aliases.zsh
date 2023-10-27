@@ -2,6 +2,14 @@
 # Updated on: 09-23-2023
 
 # --------------------------------------------------------------------#
+#                       AWS Lab SSH Aliases                           #
+# --------------------------------------------------------------------#
+
+# Connect to the bastion host with access to the private subnets
+# where my test apis are running
+alias sb='ssh -i .ssh/acota-nn.pem $NN_LAB_BASTION'
+
+# --------------------------------------------------------------------#
 #                    Custom functions and tools                       #
 # --------------------------------------------------------------------#
 

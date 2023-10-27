@@ -2,14 +2,39 @@
 
 # Set the Noname SA AWS profile as default when using aws cli
 export AWS_PROFILE=491489166083_SA_Standard_Access
-export AWS_REGION=us-east-2
+export AWS_REGION=us-west-2
 # disable the aws cli output to be sent to vi 
 export AWS_PAGER=""
 
+# My Noname AWS Labs
+export NN_LAB_BASTION=bastion.apiseclab.com
+export NN_LAB_NONAME=noname.apiseclab.com
+
 # Adds the ssh keys to the keystore
-eval "$(ssh-agent -s)"
-ssh-add --apple-use-keychain ~/.ssh/acota-awsnn.pem
-ssh-add --apple-use-keychain ~/.ssh/alanc-nn.pem
+# All the keystores must have the following permissions: chmod 400 acota-awsnn.pem
+
+# Location to store the AWS keystore
+export AWS_KEYPAIR_LOCATION=/Users/acota/Dropbox/config/awskeypairs
+
+# The following command will add all the keypairs to the apple keychain
+# allowing me to ssh into AWS instances without passing the keypair as parameter
+
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+    echo "'ssh-agent' has not been started since the last reboot. Starting 'ssh-agent' now."
+    eval "$(ssh-agent -s)" /dev/null 2>&1
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+ssh-add -l > /dev/null
+if [ "$?" -ne "0" ]; then
+    echo "No ssh keys have been added to your 'ssh-agent' since the last reboot. Adding default keys now."
+	for keypair in "$AWS_KEYPAIR_LOCATION"/*.pem; do
+		if [ -f "$keypair" ]; then
+			ssh-add --apple-use-keychain "$keypair" > /dev/null 2>&1
+		fi
+  	done
+fi
 
 # TO-DO: Reorganize the PATH exports
 
