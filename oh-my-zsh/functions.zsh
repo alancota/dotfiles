@@ -213,7 +213,7 @@ c_gitall() {
 
 start_ec2s() {
 
-  local instances=$(aws ec2 describe-instances --filter Name=instance-state-name,Values=stopped Name=key-name,Values=acota | grep InstanceId | awk '{ print $2 }' | tr -d '",')
+  local instances=$(aws ec2 describe-instances --filter Name=instance-state-name,Values=stopped Name=tag:owner,Values=alancota | grep InstanceId | awk '{ print $2 }' | tr -d '",')
   p_msg "This script will start the following EC2 istances:"
   echo "${instances}"
   echo
