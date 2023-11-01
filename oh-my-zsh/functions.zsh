@@ -227,7 +227,7 @@ start_ec2s() {
     echo
     p_msg "Starting instances ${instance_list}..."
     echo
-    aws ec2 start-instances --instance-ids $(echo $instance_list | xargs)
+    aws ec2 start-instances --profile $AWS_PROFILE --instance-ids $(echo $instance_list | xargs)
     echo
     p_msg "Instances successfully started"
   fi

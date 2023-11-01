@@ -11,6 +11,17 @@ alias sb='ssh $NN_LAB_BASTION'
 alias sn='ssh $NN_LAB_NONAME'
 
 # --------------------------------------------------------------------#
+#                         AWS cli Aliases                             #
+# --------------------------------------------------------------------#
+
+# Replace the aws command line with a custom one including the
+# Noname SA AWS profile
+alias aws='aws --profile $AWS_PROFILE'
+
+# Show information about which account I'm using
+alias awho='{ aws sts get-caller-identity & aws iam list-account-aliases; } | jq -s ".|add"'
+
+# --------------------------------------------------------------------#
 #                    Custom functions and tools                       #
 # --------------------------------------------------------------------#
 
