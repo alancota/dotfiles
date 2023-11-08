@@ -22,22 +22,26 @@ export AWS_KEYPAIR_LOCATION=/Users/acota/Dropbox/config/awskeypairs
 # The following command will add all the keypairs to the apple keychain
 # allowing me to ssh into AWS instances without passing the keypair as parameter
 
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-    echo "'ssh-agent' has not been started since the last reboot. Starting 'ssh-agent' now."
-    eval "$(ssh-agent -s)" /dev/null 2>&1
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#     echo "'ssh-agent' has not been started since the last reboot. Starting 'ssh-agent' now."
+#     eval "$(ssh-agent -s)" /dev/null 2>&1
+#     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+# fi
+# export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
-ssh-add -l > /dev/null
-if [ "$?" -ne "0" ]; then
-    echo "No ssh keys have been added to your 'ssh-agent' since the last reboot. Adding default keys now."
-	for keypair in "$AWS_KEYPAIR_LOCATION"/*.pem; do
-		if [ -f "$keypair" ]; then
-			ssh-add --apple-use-keychain "$keypair" > /dev/null 2>&1
-		fi
-  	done
-fi
+# SSH Agent hosted by 1Password
+# More info: https://developer.1password.com/docs/ssh/agent/config
+SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add -l
+
+# ssh-add -l > /dev/null
+# if [ "$?" -ne "0" ]; then
+#     echo "No ssh keys have been added to your 'ssh-agent' since the last reboot. Adding default keys now."
+# 	for keypair in "$AWS_KEYPAIR_LOCATION"/*.pem; do
+# 		if [ -f "$keypair" ]; then
+# 			ssh-add --apple-use-keychain "$keypair" > /dev/null 2>&1
+# 		fi
+#   	done
+# fi
 
 # TO-DO: Reorganize the PATH exports
 
