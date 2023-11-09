@@ -173,6 +173,7 @@ alias nu="nvm use"
 
 alias ni="npm install --save"
 alias nid="npm install --save-dev"
+alias nig="npm install --global"
 
 # --------------------------------------------------------------------#
 #                     AWS cli and Programming                         #
