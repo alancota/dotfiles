@@ -1,4 +1,4 @@
-# Changed on 10/06/2023
+e# Changed on 10/06/2023
 
 # Set the Noname SA AWS profile as default when using aws cli
 export AWS_ACCESS_KEY_ID="ASIAXE3YJQMBUR667KWZ"
