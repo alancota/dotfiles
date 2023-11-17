@@ -187,8 +187,11 @@ cask "webstorm"
 cask "whatsapp"
 cask "workspaces"
 cask "zoom"
+mas "1Password for Safari", id: 1569813296
 mas "Advanced Screen Share", id: 1597458111
+mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
+mas "Goodnotes", id: 1444383602
 mas "Grammarly for Safari", id: 1462114288
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
@@ -201,8 +204,11 @@ mas "New File Menu", id: 1064959555
 mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
+mas "OpenIn", id: 1643649331
 mas "Pages", id: 409201541
 mas "Pro Mouse", id: 1505869474
+mas "RadarScope", id: 288419283
+mas "ScreenBrush", id: 1233965871
 mas "SlideDraw", id: 1476928012
 mas "Teleprompter", id: 417605357
 mas "Tot", id: 1491071483
