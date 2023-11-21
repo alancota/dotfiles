@@ -182,3 +182,12 @@ alias nig="npm install --global"
 # whoami get authenticated identity
 alias ami='aws my-instances'
 alias adi='aws desc-inst'
+
+# --------------------------------------------------------------------#
+#                              Kubernetes                             #
+# --------------------------------------------------------------------#
+
+# switch between contexts
+alias kgc='kubectl config get-contexts'
+alias ksg="kubectl config use-context"
+alias ksd='kubectl config use-context docker-desktop'
