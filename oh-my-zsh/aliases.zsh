@@ -1,5 +1,17 @@
 # My custom aliases for ZSH
-# Updated on: 09-23-2023
+# Updated on: 11-22-2023
+
+# --------------------------------------------------------------------#
+#                      GraphQL Hacking Tools                          #
+# --------------------------------------------------------------------#
+
+# Server / implementation Fingerprint Reconnessance tool:
+# Graphw00f <https://github.com/dolevf/graphw00f>
+alias grw00f="python3 ~/Noname/graphql/graphw00f/main.py"
+
+# Password brute-force and fuzzing
+# CrackQL <https://github.com/nicholasaleks/CrackQL>
+alias crql="python3 ~/Noname/graphql/CrackQL/CrackQL.py"
 
 # --------------------------------------------------------------------#
 #                       AWS Lab SSH Aliases                           #
