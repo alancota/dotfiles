@@ -70,7 +70,8 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Homebrew bin
-export PATH=$PATH:/opt/homebrew/bin
+export PATH="/opt/homebrew/bin:$PATH"
+# export PATH=$PATH:/opt/homebrew/bin
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=/Users/acota/.local/bin:$PATH
 # Enabled on 6/26 - Brew for x86_64 packages
