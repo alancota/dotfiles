@@ -71,6 +71,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Homebrew bin
 export PATH=$PATH:/opt/homebrew/bin
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=/Users/acota/.local/bin:$PATH
 # Enabled on 6/26 - Brew for x86_64 packages
 # https://medium.com/mkdir-awesome/how-to-install-x86-64-homebrew-packages-on-apple-m1-macbook-54ba295230f
@@ -101,6 +102,11 @@ export PATH=$PATH:$KIND_PATH
 # Python 3.9
 # export PYTHON_PATH=/Users/acota/Library/Python/3.9/bin
 # export PATH=$PATH:$PYTHON_PATH
+
+# Python tool to install multiple versions: https://github.com/pyenv/pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 #jenv enable-plugin export
 #jenv enable-plugin maven
@@ -258,3 +264,5 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
