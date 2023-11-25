@@ -124,6 +124,9 @@ alias ic='cd ${HOME}/iCloud'
 # Check which Mac network interface is being used
 alias whichif='networksetup -listnetworkserviceorder  |grep -B1 "$(route get google.com | awk "/interface/ {print \$2}")"'
 
+# Mkdir
+alias md='mkdir -p'
+
 # --------------------------------------------------------------------#
 #                    Docker and Docker Compose                        #
 # --------------------------------------------------------------------#
@@ -161,6 +164,11 @@ alias gbm='go build main.go'
 
 # Python 3 aliases
 alias p3='python3'
+alias python='python3'
+alias pl='pip list'
+alias pi='pip install'
+alias pf='pip freeze'
+alias dja='django-admin'
 
 # PlantUML alias
 alias plantuml='java -jar /usr/local/bin/plantuml-1.2023.10.jar'

@@ -99,8 +99,8 @@ export KIND_PATH=/usr/local/Cellar/kind/0.9.0/bin
 export PATH=$PATH:$KIND_PATH
 
 # Python 3.9
-export PYTHON_PATH=/Users/acota/Library/Python/3.9/bin
-export PATH=$PATH:$PYTHON_PATH
+# export PYTHON_PATH=/Users/acota/Library/Python/3.9/bin
+# export PATH=$PATH:$PYTHON_PATH
 
 #jenv enable-plugin export
 #jenv enable-plugin maven
