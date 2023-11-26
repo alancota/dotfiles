@@ -53,6 +53,9 @@ alias bkp='${HOMEBREW_BACKUP}/homebrew_backup.sh'
 # Git add all + commit + push
 alias gall='c_gitall'
 
+# Git add all + custom git commit message
+alias gallmsg='git add . && git commit'
+
 # --------------------------------------------------------------------#
 #                        Zsh specific aliases                         #
 # --------------------------------------------------------------------#
@@ -137,6 +140,7 @@ alias dsls='docker secret ls'
 alias dsrm='docker secret rm'
 alias dsin='docker secret inspect'
 alias ds='docker secret'
+alias dc='docker compose'
 
 # Additional docker-compose custom aliases
 # This alias will run and open the logs right away
@@ -148,11 +152,20 @@ alias dcrun='dcupd && dclf'
 alias dpsc='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.State}}\t{{.Status}}\t{{.RunningFor}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 4 ) |  docker-color-output'
 
 # Docker-compose ps with colors
-alias dcps='docker-compose ps | docker-color-output'
+alias dcps='docker compose ps | docker-color-output'
 
 # Docker-compose logs
-alias dcl='docker-compose logs -f'
-alias dclt='docker-compose logs -f --tail=5'
+alias dcl='docker compose logs -f'
+alias dclt='docker compose logs -f --tail=5'
+
+# Run Docker Compose commands
+alias dcr='docker compose run --rm app sh -c'
+
+# Docker compose build
+alias dcb='docker compose build'
+
+# Docker compose up
+alias dcup='docker compose up'
 
 # --------------------------------------------------------------------#
 #                  Development and Programming                        #
@@ -186,6 +199,9 @@ alias java_home="/usr/libexec/java_home"
 
 # NVM Node Manager Aliases
 alias nu="nvm use"
+
+# Python Docker Compose development aliases
+
 
 # --------------------------------------------------------------------#
 #                           NPM Aliases                               #
