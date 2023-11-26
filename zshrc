@@ -1,9 +1,10 @@
-# Changed on 10/06/2023
+# Changed on 11/26/2023
+# What changed: added 1Password CLI (op) auto-completion
 
-# [11/22 3:55 AM - ac]: Set the Noname SA AWS profile as default when using aws cli 
-export AWS_ACCESS_KEY_ID="ASIAXE3YJQMBRNW5G4RE"
-export AWS_SECRET_ACCESS_KEY="JQ32hZS1eHBJH+4RzazEV1y80tANGdtsJFSNkBKL"
-export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjENL//////////wEaCXVzLWVhc3QtMSJHMEUCIFxp2xuJS2AV6n357r+zUIyTVdZiJLAbDxUkoLFljhL8AiEA3LL7ZzBALLCv7K4orSPtb2j2/+uvdS5EK4WCGTAKFzMqlwMIKxACGgw0OTE0ODkxNjYwODMiDHb2K4KA2RFmQ1hbjyr0AobpkTGal9yXjq9SBwddtKQTdbL6hVGubTEer6GBenYl3Z6Lr7wy6QmZIpykJwGz4qLjSC2Rhjer6/LHxKPT8Px8TKeDh0dIVTlfU6axq+ROjAipku73KodSNOpvBNU+mVI9qj5pe238sdUM2X350+/55xeHw8nztxuQqW7nj+NyKgCrW/dZZMutbUFjEZ7jk4R96l4XoDQrqpLnyIiKwjARHBEo/IZjtPs9w1qXhyhzNPTZZ4vhBOFmHInjlwE/nvFoZA/i8T+LbZwuyZ2SltS9dQ1P6NJCIbH8aaBxboT5A42AHufViBvSpw6b+HctAjodA1/oMRZ79Ri3uj3L2HKEhgAg/uLDb0UsOoPuizz5A99CdjvUDnR5lnWD2uLk80PdJuYx5GfvifHpJGPD0ubBHhofgFCVMp+WpcjnHXn0reEfdidvjCRd9crX4HEQ0FtD8+BZYvOm8H2Kx/W2H/JMGmvAFhNddNbsATFxUDFsBdbd5jDZn/eqBjqmARZeTgjRWexzPzVwTS1Q0LFs4KvFbC3mPCErsjcYiXUymuZsn0QR6ndq07QpJ0YrYrKrWO/xhYRVy6aXmxx/89s9uahFKEynw9y3ecikeUX8NGN3S7MWFtc2ikxOzKx/zSo+6+2+zwnygayCN4TGFa2H68FrRMYXYh7MlajtYjqvlrkVcKsHre9Zocf9iRmKMFhibwHN+C7eTo+tvPEW/Lljza20fpI="
+# [11/26 3:36 AM - ac]: Set the Noname SA AWS profile as default when using aws cli  
+export AWS_ACCESS_KEY_ID="ASIAXE3YJQMB77ZIOQQL"
+export AWS_SECRET_ACCESS_KEY="aVJnkGmDrcVyYnqKp1AOVpEq2JTnWQnoIqRXzrW4"
+export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEDIaCXVzLWVhc3QtMSJHMEUCIQCvhvmhoFu1YAyzRCci7DM8LVRxplLsp3Cuwgi8rYmPPgIgdd2Mdu5s50LchylbQrQbFVWjhhl2Fp42tq73nhW6OJUqoAMIi///////////ARACGgw0OTE0ODkxNjYwODMiDLW+QJ2muE/bd4th4yr0ArpFDlWkD/pKYJR38usL+dCuTkprQCZsYybOjdnuKP3c75kFi+saKSeLXvDMx7Bqv+e3y1zNaEPwgEbXItgjO3Ugb3+/rMI+qIqaTHNnI2O0A+bfOWcHW0KwiVSuGaeLNNe9qrvHcaDWPjGAR7/USUE83GTzUO5iET0rN/6ea9lgNHLcshohRzFuDET2g8cb3XwXDf4Kbc1tz2yLkOWTxUoW3/MHK+8of3J7sXUB6A+ggXS8V2fMaRwQKjhf5mC/j1y7mybvwnHCpRo0GxXNkkjLoweZE2D0vrX611IM8mzDuT8Dw54IXVUwcuVnss8nAJtliqGZL2nW1USlknegNRe+mpHnR+c/9x3CkkW777AdTR7LkzeyeUF1dFZDgq1SMI8++rGwEqKVI5KHkNM9Gyj85eksVJKBVYJDk0EKyS/dChkT+acvGl9fVDkMXolQWiMJsAZ3gv46UnKyR16JknVcrENCJifPe5rIdH49fS2J/Cm0RDCQooyrBjqmAcxtJ92RnLrOplFtWse+M2BHi2yunPzL8CRkpaamFzLW7kYsC3HVJFU6Qo0+MApxATgY29s32ohoyn2UgoqKljsM0y+QnmKYmK/5fFelBkA4jjTOY3ZGMipmldn9ACMizlXDaLUXFe3TltkwG4QaNXOO98m7jZ3Gy4yDFjMAog6hZvmybodeLZUSt8/QkzsePSKwWD3UZJ5nsc5eVhQBGOlax1egpPk="
 
 export AWS_PROFILE=491489166083_SA_Standard_Access
 # export AWS_REGION=us-west-2
@@ -14,37 +15,13 @@ export AWS_PAGER=""
 export NN_LAB_BASTION=bastion.apiseclab.com
 export NN_LAB_NONAME=noname.apiseclab.com
 
-# Adds the ssh keys to the keystore
-# All the keystores must have the following permissions: chmod 400 acota-awsnn.pem
-
 # Location to store the AWS keystore
 export AWS_KEYPAIR_LOCATION=/Users/acota/Dropbox/config/awskeypairs
-
-# The following command will add all the keypairs to the apple keychain
-# allowing me to ssh into AWS instances without passing the keypair as parameter
-
-# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-#     echo "'ssh-agent' has not been started since the last reboot. Starting 'ssh-agent' now."
-#     eval "$(ssh-agent -s)" /dev/null 2>&1
-#     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-# fi
-# export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 # SSH Agent hosted by 1Password
 # More info: https://developer.1password.com/docs/ssh/agent/config
 SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add -l
 
-# ssh-add -l > /dev/null
-# if [ "$?" -ne "0" ]; then
-#     echo "No ssh keys have been added to your 'ssh-agent' since the last reboot. Adding default keys now."
-# 	for keypair in "$AWS_KEYPAIR_LOCATION"/*.pem; do
-# 		if [ -f "$keypair" ]; then
-# 			ssh-add --apple-use-keychain "$keypair" > /dev/null 2>&1
-# 		fi
-#   	done
-# fi
-
-# TO-DO: Reorganize the PATH exports
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -266,4 +243,5 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
+# [11/26 3:28 AM - ac]: 1Password CLI ZSH auto-completion feature
+eval "$(op completion zsh)"; compdef _op opsource /Users/acota/.config/op/plugins.sh
