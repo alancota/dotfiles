@@ -182,6 +182,11 @@ alias pl='pip list'
 alias pi='pip install'
 alias pf='pip freeze'
 alias dja='django-admin'
+alias dpm='python manage.py'
+alias dpmmk='python manage.py makemigrations'
+alias dpmmi='python manage.py migrate'
+alias dpmsh='python manage.py shell'
+
 
 # PlantUML alias
 alias plantuml='java -jar /usr/local/bin/plantuml-1.2023.10.jar'
