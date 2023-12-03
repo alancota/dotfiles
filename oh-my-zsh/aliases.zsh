@@ -186,6 +186,7 @@ alias dpm='python manage.py'
 alias dpmmk='python manage.py makemigrations'
 alias dpmmi='python manage.py migrate'
 alias dpmsh='python manage.py shell'
+alias dpmr='python manage.py runserver'
 
 
 # PlantUML alias
