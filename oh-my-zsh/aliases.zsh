@@ -176,7 +176,7 @@ alias grm='go run main.go'
 alias gbm='go build main.go'
 
 # Python 3 aliases
-alias p3='python3'
+alias p='python3'
 alias python='python3'
 alias pl='pip list'
 alias pi='pip install'
