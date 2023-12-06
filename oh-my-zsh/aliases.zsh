@@ -1,5 +1,5 @@
 # My custom aliases for ZSH
-# Updated on: 11-22-2023
+# Updated on: 12-06-2023
 
 # --------------------------------------------------------------------#
 #                      GraphQL Hacking Tools                          #
@@ -13,6 +13,7 @@ alias grw00f="python3 ~/Noname/graphql/graphw00f/main.py"
 # CrackQL <https://github.com/nicholasaleks/CrackQL>
 alias crql="python3 ~/Noname/graphql/CrackQL/CrackQL.py"
 
+
 # --------------------------------------------------------------------#
 #                       AWS Lab SSH Aliases                           #
 # --------------------------------------------------------------------#
@@ -21,6 +22,8 @@ alias crql="python3 ~/Noname/graphql/CrackQL/CrackQL.py"
 # where my test apis are running
 alias sb='ssh $NN_LAB_BASTION'
 alias sn='ssh $NN_LAB_NONAME'
+alias nnk8s='cd ~/Noname/labs/kubernetes/lab1-eks-sa01_3.23'
+
 
 # --------------------------------------------------------------------#
 #                         AWS cli Aliases                             #
@@ -230,6 +233,7 @@ alias adi='aws desc-inst'
 # --------------------------------------------------------------------#
 
 # switch between contexts
-alias kgc='kubectl config get-contexts'
-alias ksg="kubectl config use-context"
-alias ksd='kubectl config use-context docker-desktop'
+alias kcg='kubectl config get-contexts'
+alias kcu="kubectl config use-context"
+alias kcd='kubectl config use-context docker-desktop'
+alias kcn='kubectl config use-context sa-eks-cluster && kubens noname-alanc-platform'
