@@ -23,6 +23,10 @@ export AWS_KEYPAIR_LOCATION=/Users/acota/Dropbox/config/awskeypairs
 SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add -l
 
 
+# direnv hook
+# https://direnv.net/docs/hook.html
+eval "$(direnv hook zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
