@@ -1,6 +1,9 @@
 # Changed on 11/26/2023
 # What changed: added 1Password CLI (op) auto-completion
 
+# Poetry Global Configurations
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 # [12/11 1:31 PM - ac]:   Set the Noname SA AWS profile as default when using aws cli   
 export AWS_ACCESS_KEY_ID="ASIAXE3YJQMB533TXRWV"
 export AWS_SECRET_ACCESS_KEY="DThEQ/Hmr0VisrF+6JPqk+TSCem710ZYo3Ng4aOc"
