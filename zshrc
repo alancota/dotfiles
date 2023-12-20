@@ -80,6 +80,10 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export MAVEN_HOME="$HOME/AnypointStudio/maven/apache-maven-3.8.7"
 export PATH="$MAVEN_HOME/bin:$PATH"
 
+# PyCharm Command Line Launcher
+export PYCHARM_CMD="/Applications/PyCharm.app/Contents/MacOS"
+export PATH="$PYCHARM_CMD:$PATH"
+
 #export JAVA_HOME="$(/usr/libexec/java_home -v 18)"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
